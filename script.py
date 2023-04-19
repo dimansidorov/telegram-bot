@@ -3,7 +3,7 @@ from aiogram.filters import Command
 from aiogram.types import Message, ContentType
 from aiogram import F
 
-from .config import API_TOKEN
+from config import API_TOKEN
 
 
 
@@ -21,6 +21,7 @@ async def process_help_command(message: Message):
 
 async def send_echo(message: Message):
     try:
+        
         await message.send_copy(chat_id=message.chat.id)
     except TypeError:
         await message.reply(text='Данный тип апдейтов не поддерживается '
